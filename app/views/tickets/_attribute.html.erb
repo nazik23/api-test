@@ -1,0 +1,9 @@
+<% unless attribute[0] =~ /(_?id\Z|_at\Z|well_known_text)/ %>
+	<% text = "#{attribute[0].humanize} - "%>
+  <% if attribute[1].is_a? Hash %>
+		<% text += attribute[1].map {|k,v| " #{v}(#{k})"}.join(',')%>
+	<% else %>
+  	<% text += "#{attribute[1]}" %>
+	<% end %>
+	<li><%= text %></li>
+<% end %>

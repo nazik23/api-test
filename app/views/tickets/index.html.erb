@@ -1,0 +1,12 @@
+<h1>Ticket</h1>
+<p id="polygon-text" hidden><%= @ticket.well_known_text.gsub(/(\w+\(\(|\)\))/, '')  %></p>
+<ul>
+  <%= render partial: "attribute", collection: @ticket.attributes %>
+</ul>
+</br>
+<h3>Excavator data</h3>
+<ul>
+  <%= render partial: "attribute", collection: @excavator.attributes %>
+</ul>
+<div id="map"></div>
+
